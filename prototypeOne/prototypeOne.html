@@ -2,7 +2,11 @@
 	<head>
 	    <title>Yelp prototype one</title>
 		<link	rel="stylesheet" type="text/css"	href="css/index.css">
-		<script src="prototype1.js"></script>	
+		<script src="prototype1.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	</head>
 	<body onLoad="init()">
 	
@@ -27,19 +31,57 @@
 			<h1>Itinerary Page</h1>
 			</div>
 			
-			<div class="mainPopUp" id="window1">Window1
+			<div class="mainPopUp" id="window1">
+
+				<div class="addToExisting">Add to Existing Itinerary</div>
+				<div class="createNewItinerary">Create New Itinerary</div>
 				<div class="confirmButton">Confirm</div>
 				<div class="cancelButton">Cancel</div>
 				</div>
-			<div class="mainPopUp" id="window2">Window2
+			<div class="mainPopUp" id="window2">Select the Existing Itinerary
+
+				<select>
+            		<option>Select an option...</option>
+            		<option>Date Night</option>
+            		<option>Robyn's B-Day</option>
+            		<option>Adios Chenyang</option>
+            		<option>Samson is back!</option>
+     		   </select>
+
+				<!-- FAILED TO USE BOOTSTRAP Q_Q
+				<div class="container">
+ 					 <div class="dropdown">
+   						<button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Please select...
+ 					   <span class="caret"></span></button>
+					   	  <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+					      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Date Night</a></li>
+					      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Robyn's Birthay</a></li>
+					      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Adios Chenyang</a></li>
+					      </ul>
+  					</div>
+  					<br>
+				</div> -->
+
 				<div class="confirmButton">Confirm</div>
 				<div class="cancelButton">Cancel</div>
 			</div>
-			<div class="mainPopUp" id="window3">Window3
-			<div class="cancelButton">Cancel</div>
+			<div class="mainPopUp" id="window3">Added Successfully.
+			<div class="okayButton">Okay</div>
 			</div>
-			
-			
-		</div>
+			<div class="mainPopup" id="window4">Creating a new Itinerary
+
+				<input type="itineraryName" placeholder="type here..." name="itineraryName"/>
+
+				<div class="confirmButton2">Confirm</div>
+				<div class="cancelButton">Cancel</div>
+			</div>
+			<div class="mainPopUp" id="window5">Added Successfully.
+			<div class="okayButton">Okay</div>
+
+		<script>
+			$(document).ready(function(){
+    		$(".dropdown-toggle").dropdown();
+		});
+</script>
 	</body>
 </html>
