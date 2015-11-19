@@ -10,7 +10,7 @@
 
 #navigationBar{
 	position:absolute;
-	background-color:rgb(0,100,100);
+	background-color:#DC143C;
 	top:10px;
 	height:120px;
 	width:1000px;
@@ -19,17 +19,16 @@
 
 #mainPage{
 	position:absolute;
-	background-color:rgb(0,150,150);
+	background-color:#A9A9A9;
 	top:140px;
 	height:1200px;
 	width:1000px;
 
-	
 }
 
 #itineraryPage{
 	position:absolute;
-	background-color:rgb(250,100,100);
+	background-color:#FFFFF0;
 	top:140px;
 	height:1200px;
 	width:1000px;
@@ -57,7 +56,7 @@
 
 #infoWindow{
 position:absolute;
-background-color:rgb(100,250,100);
+background-color:#FFFFFF;
 height:400px;
 width:400;
 top:10px;
@@ -66,7 +65,7 @@ left:10px;
 
 #photoWindow{
 position:absolute;
-background-color:rgb(100,250,100);
+background-color:#FFFFFF;
 height:300px;
 width:570px;
 right:10px;
@@ -75,7 +74,7 @@ top:10px;
 
 #reviewWindow{
 position:absolute;
-background-color:rgb(100,250,100);
+background-color:#FFFFFF;
 height:770px;
 width:600px;
 left:10px;
@@ -84,7 +83,7 @@ bottom:10px;
 
 #timeWindow{
 position:absolute;
-background-color:rgb(100,250,100);
+background-color:#FFFFFF;
 height:770px;
 width:370px;
 right:10px;
@@ -93,7 +92,7 @@ bottom:10px;
 
 #addItiButton{
 position:absolute;
-background-color:rgb(50,200,50);
+background-color:#DC143C;
 height:50px;
 width:400px;
 right:100px;
@@ -113,7 +112,7 @@ line-height: 10px;
 
 .mainPopUp{
 	position:absolute;
-	background-color:rgb(0,150,150);
+	background-color:#DC143C;
 	width:400px;
 	height:300px;
 	left:50%;
@@ -134,7 +133,7 @@ line-height: 10px;
 
 .addToExisting{
 	position:absolute;
-	background-color:rgb(0,200,200);
+	background-color:#FFFFFF;
 	width:200px;
 	height:60px;
 	right:100px;
@@ -153,7 +152,7 @@ line-height: 10px;
 
 .createNewItinerary{
 	position:absolute;
-	background-color:rgb(0,200,200);
+	background-color:#FFFFFF;
 	width:200px;
 	height:60px;
 	right:100px;
@@ -172,7 +171,7 @@ line-height: 10px;
 
 .confirmButton{
 	position:absolute;
-	background-color:rgb(0,200,200);
+	background-color:#FFFFFF;
 	width:100px;
 	height:40px;
 	right:20px;
@@ -190,7 +189,7 @@ line-height: 10px;
 
 .confirmButton2{
 	position:absolute;
-	background-color:rgb(0,200,200);
+	background-color:#FFFFFF;
 	width:100px;
 	height:40px;
 	right:20px;
@@ -212,7 +211,7 @@ line-height: 10px;
 
 .cancelButton{
 	position:absolute;
-	background-color:rgb(0,200,200);
+	background-color:#FFFFFF;
 	width:100px;
 	height:40px;
 	left:20px;
@@ -235,7 +234,7 @@ input{
 
 .okayButton{
 	position:absolute;
-	background-color:rgb(0,200,200);
+	background-color:#FFFFFF;
 	width:100px;
 	height:40px;
 	left:150px;
