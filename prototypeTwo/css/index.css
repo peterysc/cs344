@@ -1,0 +1,325 @@
+#mainbody{
+	position:absolute;
+	width:1000px;
+	height:1500px;
+	left:50%;
+	margin-left:-500px;
+	padding-left:0px;
+	
+}
+
+#navigationBar{
+	position:absolute;
+	background-color:rgb(0,100,100);
+	top:10px;
+	height:120px;
+	width:1000px;
+	
+}
+
+#mainPage{
+	position:absolute;
+	background-color:rgb(0,150,150);
+	top:140px;
+	height:1200px;
+	width:1000px;	
+}
+
+#searchResultPage{
+	position:absolute;
+	background-color:rgb(250,100,100);
+	top:140px;
+	height:1200px;
+	width:1000px;
+	display:none;
+	z-index:2;
+}
+
+#itineraryPage{
+	position:absolute;
+	background-color:rgb(250,100,100);
+	top:140px;
+	height:1200px;
+	width:1000px;
+	display:none;
+	z-index:2;
+}
+
+
+#selectIti{
+	position:absolute;
+	background-color:rgb(100,250,100);
+	border-radius:10px;
+	height:25px;
+	right:20px;
+	bottom:0px;
+	cursor:pointer;
+	border: solid rgb(0,0,0) 2px;
+}
+
+#infoWindow{
+position:absolute;
+background-color:rgb(100,250,100);
+height:300px;
+width:400;
+top:10px;
+left:10px;
+}
+
+#photoWindow{
+position:absolute;
+background-color:rgb(100,250,100);
+height:300px;
+width:570px;
+right:10px;
+top:10px;
+}
+
+#reviewWindow{
+position:absolute;
+background-color:rgb(100,250,100);
+height:770px;
+width:600px;
+left:10px;
+bottom:10px;
+}
+
+#timeWindow{
+position:absolute;
+background-color:rgb(100,250,100);
+height:770px;
+width:370px;
+right:10px;
+bottom:10px;
+}
+
+#addItiButton{
+position:absolute;
+background-color:rgb(50,200,50);
+height:50px;
+width:400px;
+left:50px;
+top:340px;
+border-radius:10px;
+cursor:pointer;
+
+text-align: center;
+vertical-align: middle;
+line-height: 10px;
+}
+
+#addItiButton:hover{
+	background-color:rgb(150,200,200);
+	color:rgb(255,0,0);
+}
+
+.mainPopUp{
+	position:absolute;
+	background-color:rgb(0,150,150);
+	width:400px;
+	height:300px;
+	left:50%;
+	top:20%;
+	margin-left:-200px;
+	z-index:2;
+	border-radius:30px;
+	border: solid rgb(0,0,0) 5px;
+	
+	font-size:30px;
+	font-family:"Times New Roman";
+	text-align: center;
+	vertical-align: middle;
+	line-height: 150px;
+	
+	display:none;
+}
+
+.confirmButton{
+	position:absolute;
+	background-color:rgb(0,200,200);
+	width:100px;
+	height:40px;
+	right:20px;
+	bottom:10px;
+	border-radius:10px;
+	border: solid rgb(0,0,0) 2px;
+	
+	font-size:20px;
+	font-family:"Times New Roman";
+	text-align: center;
+	vertical-align: middle;
+	line-height: 40px;
+	cursor:pointer;
+}
+
+.cancelButton{
+	position:absolute;
+	background-color:rgb(0,200,200);
+	width:100px;
+	height:40px;
+	left:20px;
+	bottom:10px;
+	border-radius:10px;
+	border: solid rgb(0,0,0) 2px;
+	
+	font-size:20px;
+	font-family:"Times New Roman";
+	text-align: center;
+	vertical-align: middle;
+	line-height: 40px;
+	cursor:pointer;
+}
+
+#searchBar{
+	bottom:40px;
+}
+
+#search{
+	background-color:rgb(200,0,0);
+	border-radius:10px;
+	height:40px;
+	width:40px;
+	cursor:pointer;
+}
+#search img{
+	height:25px;
+	width:25px;
+}
+
+#itineraryWindow{
+	position:absolute;
+	background-color:rgb(255,255,0);
+	width:300px;
+	height:1200px;
+	right:0px;
+	top:-10px;
+	z-index:3;
+	display:none;
+}
+
+#createItiWindow{
+	position:absolute;
+	background-color:rgb(255,200,0);
+	width:400px;
+	height:300px;
+	right:0px;
+	top:0px;
+	z-index:10;
+	display:none;
+	border-radius:10px;
+	border: solid rgb(0,0,0) 2px;
+}
+
+.itineraryItem{
+	position:absolute;
+	background-color:rgb(255,200,0);
+	width:300px;
+	height:1200px;
+	right:0px;
+	top:50px;
+	z-index:4;
+	display:none;
+	border-radius:10px;
+	border: solid rgb(0,0,0) 2px;
+}
+.itiName{
+	position:absolute;
+	background-color:rgb(255,200,0);
+	width:100px;
+	height:50px;
+	left:0px;
+	top:-50px;
+	border-radius:10px;
+	border: solid rgb(0,0,0) 2px;
+	cursor:pointer;
+}
+
+.itiIcons{
+	position:absolute;
+	background-color:rgb(255,150,0);
+	width:300px;
+	height:100px;
+	right:0px;
+	top:0px;
+}
+
+.itiItems{
+	position:absolute;
+	background-color:rgb(200,150,0);
+	width:300px;
+	height:auto;
+	right:0px;
+	top:110px;
+	border-top: solid rgb(0,0,0) 2px;
+}
+
+.plusButton{
+	position:absolute;
+	background-color:rgb(150,150,0);
+	width:20px;
+	height:20px;
+	right:10px;
+	top:10px;
+	border: solid rgb(0,0,0) 2px;
+	border-radius:20px;
+	cursor:pointer;
+}
+
+.filterIcon{
+	position:absolute;
+	background-color:rgb(250,190,0);
+	width:30px;
+	height:30px;
+	top:60px;
+	border: solid rgb(0,0,0) 2px;
+	cursor:pointer;
+	
+}
+
+#filRes{
+	left:10px;
+}
+
+#filAct{
+	left:45px;
+}
+#filMem{
+	left:80px;
+}
+#filExtra{
+	left:115px;
+}
+
+.searchItem{
+	position:relative;
+	background-color:rgb(250,150,250);
+	width:400px;
+	height:150px;
+	top:200px;
+	left:20px;
+	border-top: solid rgb(0,0,0) 2px;
+	cursor:pointer;
+	
+}
+
+#mapField{
+	position:absolute;
+	background-color:rgb(200,200,200);
+	width:400px;
+	height:600px;
+	top:20px;
+	right:20px;
+	border: solid rgb(0,0,0) 2px;
+	cursor:pointer;
+}
+
+.eventItem{
+	position:absolute;
+	background-color:rgb(200,200,200);
+	width:290px;
+	height:100px;
+	top:0px;
+	border: solid rgb(0,0,0) 2px;
+    display:none;
+	font-size:30px;
+}

@@ -1,0 +1,94 @@
+<html>
+	<head>
+	    <title>Yelp prototype two</title>
+		<link	rel="stylesheet" type="text/css"	href="css/index.css">
+		<script src="prototype2.js"></script>	
+	</head>
+	<body onLoad="init()">
+	
+		<div id="mainbody" >
+		
+		    <div id="navigationBar">
+			<h1>Yelp Navigation Bar</h1>
+			
+			
+				<div id="searchBar" ><span>Find</span>
+				 <input placeholder="Restaurants">
+				 <span>Near</span>
+				 <input placeholder="Locations">
+				 <button id="search"><img src="search.png"></button>
+				</div>
+				
+				<div id="selectIti">Itinerary Show</div>
+			
+			</div>
+			
+			<div id="searchResultPage">
+			<h1>Search Results Page</h1>
+			<div class="searchItem"><h2>Restaurant1</h2></div>
+			<div class="searchItem"><h2>Restaurant2</h2></div>
+			<div class="searchItem"><h2>Activity1</h2></div>
+			<div class="searchItem"><h2>Activity2</h2></div>
+			<div id="mapField"><h2>Map</h2></div>
+			</div>
+			
+			<div id="mainPage">
+			    <div id="itineraryWindow">Itinerary
+					<div id="createItiWindow">
+					Create a new itinerary
+					    <div style="top:100px;left:100px;">Enter Name:<br>
+						<input id="inputItiName" type="text" placeholder="Itinerary Name">
+						</div>
+						<div class="confirmButton" id="addItiConfirm">Confirm</div>
+						<div class="cancelButton">Cancel</div>
+					</div>
+					
+					<div class="itineraryItem" id="itineraryPrototype">
+					   <div class="itiName">
+					   Itinerary Name
+					   </div>
+					   <div class="itiIcons">
+					    <div class="filterIcon" id="filRes">1</div>					
+						<div class="filterIcon" id="filAct">2</div>
+						<div class="filterIcon" id="filMem">3</div>
+						<div class="filterIcon" id="filExtra">4</div>
+					    <div class="plusButton" >+</div>
+					   Icons
+					   </div>
+					   <div class="itiItems">
+					     <div class="eventItem" id="itemPrototype">
+						 </div>
+					   Items
+					   </div>
+					</div>
+				</div>
+					
+
+				<div id="infoWindow"><h3>Info</h3></div>
+				<div id="photoWindow"><h3>Photo</h3></div>
+				<div id="reviewWindow"><h3>Review</h3></div>
+				<div id="timeWindow"><h3>Time</h3></div>
+				<div id="addItiButton"><h2>Add to itinerary</h2></div>
+			</div>
+			
+			<div id="itineraryPage">
+				
+			<h1>Itinerary Page</h1>
+			</div>
+			
+			<div class="mainPopUp" id="window1">Window1
+				<div class="confirmButton" id="addToIti">Confirm</div>
+				<div class="cancelButton">Cancel</div>
+				</div>
+			<div class="mainPopUp" id="window2">Window2
+				<div class="confirmButton">Confirm</div>
+				<div class="cancelButton">Cancel</div>
+			</div>
+			<div class="mainPopUp" id="window3">Window3
+			<div class="cancelButton">Cancel</div>
+			</div>
+			
+			
+		</div>
+	</body>
+</html>
