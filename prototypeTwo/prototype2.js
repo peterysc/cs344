@@ -5,7 +5,8 @@ Temp, events of itinerary one
 **/
 var events =[];
 
-var currentIti;
+
+var currentIti="";
 
 function jumpToIti(){
 	
@@ -41,20 +42,35 @@ Temp, add a event to the first itinerary
 **/
 function addEventToItineraryOne(){
 	var infoWindow = document.getElementById('infoWindow');
-	console.log("info window "+infoWindow.innerHTML);
-	events[events.length]=infoWindow.innerHTML;
+    console.log("curIti is "+currentIti);
+	for(var i =0; i< itiernaryList.length;i++){
+		if(itiernaryList[i].name == currentIti){
+			console.log("add success!");
+			itiernaryList[i].events.push(infoWindow.innerHTML);
+		}
+	}
     showEvents();
     this.parentNode.style.display="none";	
 }
 
 function showEvents(){
-	var currIti = document.getElementById('itinerary1');
+	var currItiId = 'itinerary1';
+	var currEvents = [];
+	for(var i =0; i< itiernaryList.length;i++){
+		if(itiernaryList[i].name == currentIti){
+			currItiId = 'itinerary'+(i+1);
+			currEvents = itiernaryList[i].events;
+		}
+	}
+	
+	var currIti = document.getElementById(currItiId);
 	var items=currIti.getElementsByClassName('itiItems')[0];
 	var itemPrototype = document.getElementById('itemPrototype');
-	for(var i =0; i <events.length; i++){
-		console.log("event "+i+" is "+events[i]);
+	console.log("events are "+currEvents);
+	for(var i =0; i <currEvents.length; i++){
+		console.log("event "+i+" is "+currEvents[i]);
 		var newItem = itemPrototype.cloneNode(true);
-		newItem.innerHTML = events[i];
+		newItem.innerHTML = currEvents[i];
 		newItem.style.display="block";
 		newItem.style.top=i*100+"px";
 		items.appendChild(newItem);
@@ -100,7 +116,9 @@ function jumpToNext(){
 function addItinerary(){
 	var newItiName = document.getElementById('inputItiName');
 	console.log(newItiName);
-	itiernaryList[itiernaryList.length] = newItiName.value;
+	var newItinerary = {name:newItiName.value,events:[]}
+	itiernaryList[itiernaryList.length] = newItinerary;
+	currentIti = newItiName.value;
 	newItiName.value ="";
 	this.parentNode.style.display="none";
 	showItineraries();
@@ -117,6 +135,9 @@ function switchIti(){
 	//test
 	this.parentNode.getElementsByClassName('itiItems')[0].style.display="block";
 	console.log("switch to "+this.parentNode.id);
+	var testNum = this.parentNode.id.substring(9, 10)-1;
+	currentIti = itiernaryList[testNum].name;
+	console.log(testNum+" and "+ itiernaryList[testNum].name);
 	showEvents();
 }
 
@@ -124,6 +145,10 @@ function showItineraries(){
 	console.log(itiernaryList);
 	var itiPrototype = document.getElementById('itineraryPrototype');
 	var itiWindow = document.getElementById('itineraryWindow');
+	console.log("num of nodes is "+itiWindow.childNodes.length);
+	while (itiWindow.childNodes.length>5) {
+    itiWindow.removeChild(itiWindow.lastChild);
+    }
 	for(var i =0; i<itiernaryList.length;i++){
 		var newiti = itiPrototype.cloneNode(true);
 		newiti.id = "itinerary"+(i+1);
@@ -131,7 +156,7 @@ function showItineraries(){
 		newiti.style.display="block";
 		var itiNameDiv=newiti.getElementsByClassName('itiName')[0];
 		itiNameDiv.style.left=50*(i);
-		itiNameDiv.innerHTML = itiernaryList[i];
+		itiNameDiv.innerHTML = itiernaryList[i].name;
 		itiNameDiv.addEventListener('click',switchIti);
 		newiti.getElementsByClassName('plusButton')[0].addEventListener('click',openCreateWindow);
 		itiWindow.appendChild(newiti);

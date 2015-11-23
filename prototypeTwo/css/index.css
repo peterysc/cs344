@@ -323,3 +323,40 @@ line-height: 10px;
     display:none;
 	font-size:30px;
 }
+
+.linkGroup{
+	position:absolute;
+	background-color:rgb(150,150,0);
+	width:80px;
+	height:30px;
+	right:10px;
+	bottom:10px;
+	border: solid rgb(0,0,0) 2px;
+	border-radius:20px;
+	cursor:pointer;
+}
+
+.viewDetail{
+	position:absolute;
+	background-color:rgb(150,150,0);
+	width:80px;
+	height:30px;
+	left:10px;
+	bottom:10px;
+	border: solid rgb(0,0,0) 2px;
+	border-radius:20px;
+	cursor:pointer;
+}
+	
+#profilePic{
+	position:absolute;
+	background-color:rgb(50,200,50);
+	height:70px;
+	width:100px;
+	right:20px;
+	top:10px;
+	border: solid rgb(0,0,0) 2px;
+	cursor:pointer;
+
+
+}
