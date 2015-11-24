@@ -1,5 +1,8 @@
 var itiernaryList=[];
 
+var friends = ['Robyn','Peter','Leon','Samson'];
+
+var groups = ['Date Night',"Robyn's B-Day","Adios Chenyang","Samson is back!"];
 /**
 Temp, events of itinerary one
 **/
@@ -52,6 +55,20 @@ function addEventToItineraryOne(){
     showEvents();
     this.parentNode.style.display="none";	
 }
+//-----------------------------------------
+
+function linkGroup(){
+	var groupSelection = document.getElementById('selectGroup');
+	for(var i =0; i< itiernaryList.length;i++){
+		if(itiernaryList[i].name == currentIti){
+			itiernaryList[i].group = groupSelection.options[groupSelection.selectedIndex].text;
+			console.log("group selected is: "+itiernaryList[i].group);
+		}
+	}
+	this.parentNode.style.display="none";
+	showItineraries();
+	
+}
 
 function showEvents(){
 	var currItiId = 'itinerary1';
@@ -78,15 +95,35 @@ function showEvents(){
 }
 //-----------------------------------------
 function jumpToSearch(){
+	var groupPage = document.getElementById('memberPage');
 	var searchPage = document.getElementById('searchResultPage');
+	var mainPage = document.getElementById('mainPage');
+	
 	searchPage.style.display="block";
+	mainPage.style.display="none";
+	groupPage.style.display="none";
 }
 
 function jumpToDetails(){
+	var groupPage = document.getElementById('memberPage');
 	var searchPage = document.getElementById('searchResultPage');
+	var mainPage = document.getElementById('mainPage');
+	
 	searchPage.style.display="none";
+	mainPage.style.display="block";
+	groupPage.style.display="none";
 	var infoWindow = document.getElementById('infoWindow');
 	infoWindow.innerHTML =  this.innerHTML;
+}
+
+function jumpToGroupPage(){
+	var groupPage = document.getElementById('memberPage');
+	var searchPage = document.getElementById('searchResultPage');
+	var mainPage = document.getElementById('mainPage');
+	
+	searchPage.style.display="none";
+	mainPage.style.display="none";
+	groupPage.style.display="block";
 }
 
 function openWindow(){
@@ -99,6 +136,11 @@ function openCreateWindow(){
 	var createNew = document.getElementById("createItiWindow");
 	createNew.style.display = "block";
 	}
+
+function openlinkGroupWindow(){
+	var openNew = document.getElementById("linkGroupWindow");
+	openNew.style.display = "block";
+}
 
 function cancelWindow(){
 	this.parentNode.style.display="none";
@@ -116,7 +158,7 @@ function jumpToNext(){
 function addItinerary(){
 	var newItiName = document.getElementById('inputItiName');
 	console.log(newItiName);
-	var newItinerary = {name:newItiName.value,events:[]}
+	var newItinerary = {name:newItiName.value,events:[],group:""};
 	itiernaryList[itiernaryList.length] = newItinerary;
 	currentIti = newItiName.value;
 	newItiName.value ="";
@@ -146,7 +188,7 @@ function showItineraries(){
 	var itiPrototype = document.getElementById('itineraryPrototype');
 	var itiWindow = document.getElementById('itineraryWindow');
 	console.log("num of nodes is "+itiWindow.childNodes.length);
-	while (itiWindow.childNodes.length>5) {
+	while (itiWindow.childNodes.length>6) {
     itiWindow.removeChild(itiWindow.lastChild);
     }
 	for(var i =0; i<itiernaryList.length;i++){
@@ -155,10 +197,13 @@ function showItineraries(){
 		console.log(newiti.id);
 		newiti.style.display="block";
 		var itiNameDiv=newiti.getElementsByClassName('itiName')[0];
+		var itiLinkDiv=newiti.getElementsByClassName('itiLinkInfo')[0];
+		itiLinkDiv.innerHTML = "Linked with:" + itiernaryList[i].group;
 		itiNameDiv.style.left=50*(i);
 		itiNameDiv.innerHTML = itiernaryList[i].name;
 		itiNameDiv.addEventListener('click',switchIti);
 		newiti.getElementsByClassName('plusButton')[0].addEventListener('click',openCreateWindow);
+		newiti.getElementsByClassName('linkGroup')[0].addEventListener('click',openlinkGroupWindow);
 		itiWindow.appendChild(newiti);
 	}
 	showEvents();
@@ -173,6 +218,10 @@ function init(){
 	var addItiConfirm = document.getElementById('addItiConfirm');
 	var seatchItems = document.getElementsByClassName('searchItem');
 	var addEventConfirm = document.getElementById('addToIti');
+	var linkGroupButton = document.getElementById('addGroupConfirm');
+	
+	//temp
+	var openGroupButton = document.getElementById('profilePic');
 	/**
 	for(var i =0; i <confirmButtons.length;i++ ){
 		confirmButtons[i].addEventListener('click', jumpToNext);
@@ -187,7 +236,9 @@ function init(){
 	}
 	//temp
 	addEventConfirm.addEventListener('click', addEventToItineraryOne);
+	openGroupButton.addEventListener('click', jumpToGroupPage);
 	//---
+	linkGroupButton.addEventListener('click', linkGroup);
 	searchButton.addEventListener('click', jumpToSearch);
     addItiConfirm.addEventListener('click', addItinerary);
 	selectItinerary.addEventListener('click', jumpToIti);

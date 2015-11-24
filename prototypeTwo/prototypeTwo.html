@@ -9,13 +9,20 @@
 		<div id="mainbody" >
 		
 		    <div id="navigationBar">
-			<h1>Yelp Navigation Bar</h1>
+			<img id="yelpLogo" src="Yelp_Logo.png">
 			
 			
-				<div id="searchBar" ><span>Find</span>
-				 <input placeholder="Restaurants">
-				 <span>Near</span>
-				 <input placeholder="Locations">
+				<div id="searchBar">
+				 <span style="background-color:rgb(255,255,255); border: solid rgb(100,100,100) 2px;border-radius:4px; font-size:18px; font-family:'Times New Roman';">
+				 Find:
+				 <input name ="find" placeholder="Restaurants" style= "margin:-5px;padding: 0;border:0;font-size: 100%;font: inherit; vertical-align: baseline;">
+				 
+				 </span>
+				 <span style="background-color:rgb(255,255,255);  border: solid rgb(100,100,100) 2px;border-radius:4px; margin-left:10px;font-size:18px;font-family:'Times New Roman';">
+				 Near:
+				 <input placeholder="Locations" style = "margin:-5px;padding:0;border:0;font-size: 100%;font: inherit; vertical-align: baseline;">
+				 </span>
+				 
 				 <button id="search"><img src="search.png"></button>
 				</div>
 				
@@ -24,6 +31,22 @@
 				<div id="profilePic">
 				</div>
 			
+			</div>
+			
+			<div id="homePage">
+			<h1>HOME PAGE</h1>
+			<br>
+			<h2>Instructions:</h2>
+			<br>
+			<h3>-Click search button to view search results</h3>
+			<br>
+			<h3>-Click a result to view detail</h3>
+			<br>
+			<h3>-Click Itinerary button to show/create a new itinerary</h3>
+			<br>
+			<h3>-Click add button to add an item into an itinerary</h3>
+			<br>
+			<h3>-Etc...</h3>
 			</div>
 			
 			<div id="searchResultPage">
@@ -36,13 +59,26 @@
 			</div>
 			
 			<div id="mainPage">
-			    <div id="itineraryWindow">Itinerary
+			    <div id="itineraryWindow">
 					<div id="createItiWindow">
 					Create a new itinerary
 					    <div style="top:100px;left:100px;">Enter Name:<br>
 						<input id="inputItiName" type="text" placeholder="Itinerary Name">
 						</div>
 						<div class="confirmButton" id="addItiConfirm">Confirm</div>
+						<div class="cancelButton">Cancel</div>
+					</div>
+					
+					<div id="linkGroupWindow">
+					choose a group:
+						<select id="selectGroup">
+						<option>Select a group...</option>
+						<option>Date Night</option>
+						<option>Robyn's B-Day</option>
+						<option>Adios Chenyang</option>
+						<option>Samson is back!</option>
+						</select>
+						<div class="confirmButton" id="addGroupConfirm">Confirm</div>
 						<div class="cancelButton">Cancel</div>
 					</div>
 					
@@ -56,7 +92,7 @@
 						<div class="filterIcon" id="filMem">3</div>
 						<div class="filterIcon" id="filExtra">4</div>
 					    <div class="plusButton" >+</div>
-					   Icons
+					    <span class="itiLinkInfo"></span>
 					   </div>
 					   <div class="itiItems">
 					     <div class="eventItem" id="itemPrototype">
@@ -83,6 +119,11 @@
 			<div id="itineraryPage">
 				
 			<h1>Itinerary Page</h1>
+			</div>
+			
+			<div id="memberPage">
+				
+			<h1>Member Page</h1>
 			</div>
 			
 			<div class="mainPopUp" id="window1">Window1

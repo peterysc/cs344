@@ -1,3 +1,7 @@
+body{
+	background-color:rgb(235,235,225);
+}
+
 #mainbody{
 	position:absolute;
 	width:1000px;
@@ -5,13 +9,13 @@
 	left:50%;
 	margin-left:-500px;
 	padding-left:0px;
-	
 }
 
 #navigationBar{
 	position:absolute;
-	background-color:rgb(0,100,100);
-	top:10px;
+	background-color:rgb(255,0,0);
+	border: solid rgb(150,150,150) 1px;
+	top:0px;
 	height:120px;
 	width:1000px;
 	
@@ -19,20 +23,31 @@
 
 #mainPage{
 	position:absolute;
-	background-color:rgb(0,150,150);
-	top:140px;
+	background-color:rgb(255,255,255);
+	border: solid rgb(200,200,200) 1px;
+	top:125px;
+	height:1200px;
+	width:1000px;
+    display:none;	
+}
+
+#homePage{
+	position:absolute;
+	background-color:rgb(255,255,255);
+	border: solid rgb(200,200,200) 1px;
+	top:125px;
 	height:1200px;
 	width:1000px;	
 }
 
 #searchResultPage{
 	position:absolute;
-	background-color:rgb(250,100,100);
-	top:140px;
+	background-color:rgb(255,255,255);
+	border: solid rgb(200,200,200) 1px;
+	top:125px;
 	height:1200px;
 	width:1000px;
 	display:none;
-	z-index:2;
 }
 
 #itineraryPage{
@@ -48,74 +63,94 @@
 
 #selectIti{
 	position:absolute;
-	background-color:rgb(100,250,100);
-	border-radius:10px;
+	background-color:rgb(200,0,0);
+	color:rgb(255,255,255);
+	border-radius:5px;
+	font-size:15px;
 	height:25px;
 	right:20px;
 	bottom:0px;
 	cursor:pointer;
-	border: solid rgb(0,0,0) 2px;
+	border: solid rgb(0,0,0) 1px;
+	width:100px;
+	
+	
+	font-family:"Times New Roman";
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+}
+
+#selectIti:hover{
+background-color:rgb(75,0,0);
 }
 
 #infoWindow{
 position:absolute;
-background-color:rgb(100,250,100);
+background-color:rgb(200,200,200);
 height:300px;
 width:400;
 top:10px;
 left:10px;
+border: solid rgb(0,0,0) 1px;
 }
 
 #photoWindow{
 position:absolute;
-background-color:rgb(100,250,100);
+background-color:rgb(200,200,200);
 height:300px;
 width:570px;
 right:10px;
 top:10px;
+border: solid rgb(0,0,0) 1px;
 }
 
 #reviewWindow{
 position:absolute;
-background-color:rgb(100,250,100);
+background-color:rgb(200,200,200);
 height:770px;
 width:600px;
 left:10px;
 bottom:10px;
+border: solid rgb(0,0,0) 1px;
 }
 
 #timeWindow{
 position:absolute;
-background-color:rgb(100,250,100);
+background-color:rgb(200,200,200);
 height:770px;
 width:370px;
 right:10px;
 bottom:10px;
+border: solid rgb(0,0,0) 1px;
 }
 
 #addItiButton{
+color:rgb(255,255,255);
 position:absolute;
-background-color:rgb(50,200,50);
+background-color:rgb(255,0,0);
 height:50px;
 width:400px;
 left:50px;
 top:340px;
 border-radius:10px;
 cursor:pointer;
-
+border: solid rgb(0,0,0) 2px;
 text-align: center;
 vertical-align: middle;
 line-height: 10px;
+
+
 }
 
 #addItiButton:hover{
-	background-color:rgb(150,200,200);
-	color:rgb(255,0,0);
+	background-color:rgb(75,0,0);
+
 }
 
 .mainPopUp{
 	position:absolute;
-	background-color:rgb(0,150,150);
+	background-color:rgb(255,0,0);
 	width:400px;
 	height:300px;
 	left:50%;
@@ -131,12 +166,14 @@ line-height: 10px;
 	vertical-align: middle;
 	line-height: 150px;
 	
+	color:rgb(255,255,255);
+	
 	display:none;
 }
 
 .confirmButton{
 	position:absolute;
-	background-color:rgb(0,200,200);
+	background-color:rgb(200,0,0);
 	width:100px;
 	height:40px;
 	right:20px;
@@ -152,9 +189,13 @@ line-height: 10px;
 	cursor:pointer;
 }
 
+.confirmButton:hover{
+background-color:rgb(75,0,0);
+}
+
 .cancelButton{
 	position:absolute;
-	background-color:rgb(0,200,200);
+	background-color:rgb(200,0,0);
 	width:100px;
 	height:40px;
 	left:20px;
@@ -169,37 +210,50 @@ line-height: 10px;
 	line-height: 40px;
 	cursor:pointer;
 }
+.cancelButton:hover{
+background-color:rgb(75,0,0);
+}
 
 #searchBar{
+	position:absolute;
+	height:50px;
+	width:800px;
+	left:200px;
 	bottom:40px;
 }
 
 #search{
+	margin-left:10px;
+	margin-top:10px;
 	background-color:rgb(200,0,0);
-	border-radius:10px;
-	height:40px;
-	width:40px;
+	border: solid rgb(0,0,0) 1px;
+	border-radius:4px;
+	height:22px;
+	width:30px;
 	cursor:pointer;
 }
 #search img{
-	height:25px;
-	width:25px;
+	height:14px;
+	width:20px;
+}
+
+#search:hover{
+	background-color:rgb(75,0,0);
 }
 
 #itineraryWindow{
 	position:absolute;
-	background-color:rgb(255,255,0);
 	width:300px;
 	height:1200px;
 	right:0px;
-	top:-10px;
+	top:0px;
 	z-index:3;
 	display:none;
 }
 
 #createItiWindow{
 	position:absolute;
-	background-color:rgb(255,200,0);
+	background-color:rgb(255,0,0);
 	width:400px;
 	height:300px;
 	right:0px;
@@ -208,13 +262,19 @@ line-height: 10px;
 	display:none;
 	border-radius:10px;
 	border: solid rgb(0,0,0) 2px;
+	
+	color:rgb(255,255,255);
+	font-family:"Times New Roman";
+	text-align: center;
+	vertical-align: middle;
+	line-height: 50px;
 }
 
 .itineraryItem{
 	position:absolute;
-	background-color:rgb(255,200,0);
+	background-color:rgb(255,255,255);
 	width:300px;
-	height:1200px;
+	height:1000px;
 	right:0px;
 	top:50px;
 	z-index:4;
@@ -224,7 +284,7 @@ line-height: 10px;
 }
 .itiName{
 	position:absolute;
-	background-color:rgb(255,200,0);
+	background-color:rgb(255,0,0);
 	width:100px;
 	height:50px;
 	left:0px;
@@ -232,20 +292,28 @@ line-height: 10px;
 	border-radius:10px;
 	border: solid rgb(0,0,0) 2px;
 	cursor:pointer;
+	
+	color:rgb(255,255,255);
+	font-family:"Times New Roman";
+	text-align: center;
+	vertical-align: middle;
+	line-height: 50px;
 }
 
 .itiIcons{
 	position:absolute;
-	background-color:rgb(255,150,0);
+	background-color:rgb(255,0,0);
 	width:300px;
 	height:100px;
 	right:0px;
 	top:0px;
+	
+	color:rgb(255,255,255);
+	font-family:"Times New Roman";
 }
 
 .itiItems{
 	position:absolute;
-	background-color:rgb(200,150,0);
 	width:300px;
 	height:auto;
 	right:0px;
@@ -255,7 +323,7 @@ line-height: 10px;
 
 .plusButton{
 	position:absolute;
-	background-color:rgb(150,150,0);
+	background-color:rgb(255,255,255);
 	width:20px;
 	height:20px;
 	right:10px;
@@ -267,13 +335,13 @@ line-height: 10px;
 
 .filterIcon{
 	position:absolute;
-	background-color:rgb(250,190,0);
+	background-color:rgb(255,255,255);
 	width:30px;
 	height:30px;
 	top:60px;
 	border: solid rgb(0,0,0) 2px;
 	cursor:pointer;
-	
+	color:rgb(0,0,0);
 }
 
 #filRes{
@@ -292,12 +360,12 @@ line-height: 10px;
 
 .searchItem{
 	position:relative;
-	background-color:rgb(250,150,250);
+	background-color:rgb(255,255,255);
 	width:400px;
 	height:150px;
 	top:200px;
 	left:20px;
-	border-top: solid rgb(0,0,0) 2px;
+	border-top: solid rgb(180,150,0) 2px;
 	cursor:pointer;
 	
 }
@@ -326,37 +394,94 @@ line-height: 10px;
 
 .linkGroup{
 	position:absolute;
-	background-color:rgb(150,150,0);
+	background-color:rgb(200,0,0);
 	width:80px;
 	height:30px;
 	right:10px;
 	bottom:10px;
 	border: solid rgb(0,0,0) 2px;
-	border-radius:20px;
 	cursor:pointer;
+	
+	color:rgb(255,255,255);
+	font-family:"Times New Roman";
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30px;
+}
+
+.linkGroup:hover{
+	background-color:rgb(75,0,0);
+	
 }
 
 .viewDetail{
 	position:absolute;
-	background-color:rgb(150,150,0);
+	background-color:rgb(200,0,0);
 	width:80px;
 	height:30px;
 	left:10px;
 	bottom:10px;
 	border: solid rgb(0,0,0) 2px;
-	border-radius:20px;
 	cursor:pointer;
+	
+	color:rgb(255,255,255);
+	font-family:"Times New Roman";
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30px;
+}
+
+.viewDetail:hover{
+	background-color:rgb(75,0,0);
 }
 	
 #profilePic{
 	position:absolute;
-	background-color:rgb(50,200,50);
+	background-color:rgb(255,255,255);
 	height:70px;
 	width:100px;
 	right:20px;
 	top:10px;
 	border: solid rgb(0,0,0) 2px;
 	cursor:pointer;
+}
 
+#linkGroupWindow{
+	position:absolute;
+	background-color:rgb(255,0,0);
+	width:400px;
+	height:300px;
+	right:0px;
+	bottom:0px;
+	z-index:10;
+	display:none;
+	border-radius:10px;
+	border: solid rgb(0,0,0) 2px;
+	
+	font-size:20px;
+	color:rgb(255,255,255);
+	font-family:"Times New Roman";
+	text-align: center;
+	vertical-align: middle;
+	line-height: 100px;
+	
+	
+}
 
+#memberPage{
+	position:absolute;
+	background-color:rgb(255,255,255);
+	border: solid rgb(200,200,200) 1px;
+	top:125px;
+	height:1200px;
+	width:1000px;
+    display:none;	
+}
+
+#yelpLogo{
+	position:absolute;
+	top:10px;
+	height:80px;
+	width:160px;	
+	
 }
