@@ -35,22 +35,32 @@ function jumpToIti(){
 		else{
 			showItineraries();
 		}
-	
 
-	
+}
+
+function jumpToCreateIti(){
+	openCreateWindow();
+	document.getElementById("window1").style.display="none";
 }
 
 /**
 Temp, add a event to the first itinerary
 **/
-function addEventToItineraryOne(){
+function addEventToItinerary(){
 	var infoWindow = document.getElementById('infoWindow');
-    console.log("curIti is "+currentIti);
+	var itiSelection = document.getElementById('itiSelection');
+	var selectedIti = itiSelection.options[itiSelection.selectedIndex].text;
+    //console.log("curIti is "+currentIti);
+	if(itiSelection.selectedIndex!=0){
 	for(var i =0; i< itiernaryList.length;i++){
-		if(itiernaryList[i].name == currentIti){
+		if(itiernaryList[i].name == selectedIti){
 			console.log("add success!");
 			itiernaryList[i].events.push(infoWindow.innerHTML);
 		}
+	}
+	}
+	else{
+		alert("Please select an itinerary!");
 	}
     showEvents();
     this.parentNode.style.display="none";	
@@ -59,11 +69,16 @@ function addEventToItineraryOne(){
 
 function linkGroup(){
 	var groupSelection = document.getElementById('selectGroup');
+	if(groupSelection.selectedIndex!=0){
 	for(var i =0; i< itiernaryList.length;i++){
 		if(itiernaryList[i].name == currentIti){
 			itiernaryList[i].group = groupSelection.options[groupSelection.selectedIndex].text;
 			console.log("group selected is: "+itiernaryList[i].group);
 		}
+	}
+	}
+	else{
+		alert("Please select a group!");
 	}
 	this.parentNode.style.display="none";
 	showItineraries();
@@ -98,9 +113,11 @@ function jumpToSearch(){
 	var groupPage = document.getElementById('memberPage');
 	var searchPage = document.getElementById('searchResultPage');
 	var mainPage = document.getElementById('mainPage');
+	var homePage = document.getElementById('homePage');
 	
+	homePage.style.display="none";
 	searchPage.style.display="block";
-	mainPage.style.display="none";
+	//mainPage.style.display="none";
 	groupPage.style.display="none";
 }
 
@@ -108,9 +125,11 @@ function jumpToDetails(){
 	var groupPage = document.getElementById('memberPage');
 	var searchPage = document.getElementById('searchResultPage');
 	var mainPage = document.getElementById('mainPage');
+	var homePage = document.getElementById('homePage');
 	
+	homePage.style.display="none";
 	searchPage.style.display="none";
-	mainPage.style.display="block";
+	//mainPage.style.display="block";
 	groupPage.style.display="none";
 	var infoWindow = document.getElementById('infoWindow');
 	infoWindow.innerHTML =  this.innerHTML;
@@ -120,20 +139,36 @@ function jumpToGroupPage(){
 	var groupPage = document.getElementById('memberPage');
 	var searchPage = document.getElementById('searchResultPage');
 	var mainPage = document.getElementById('mainPage');
+	var homePage = document.getElementById('homePage');
 	
+	homePage.style.display="none";
 	searchPage.style.display="none";
-	mainPage.style.display="none";
+	//mainPage.style.display="none";
 	groupPage.style.display="block";
 }
 
 function openWindow(){
 	var first = document.getElementById('window1');
 	first.style.display = "block";
-	
+	loadItiSelection();
 }
 
-function openCreateWindow(){
+function loadItiSelection(){
+	var itiSelection = document.getElementById('itiSelection');
+	while(itiSelection.length>1){
+		itiSelection.remove(itiSelection.length-1);
+	}
+	for(var i =0; i< itiernaryList.length;i++){
+			var itiOption = document.createElement("option");
+			itiOption.innerHTML=itiernaryList[i].name;
+			itiSelection.appendChild(itiOption);
+	}
+}
+
+function openCreateWindow(){	
+    var itinerary = document.getElementById("itineraryWindow");
 	var createNew = document.getElementById("createItiWindow");
+	itinerary.style.display = "block";
 	createNew.style.display = "block";
 	}
 
@@ -188,7 +223,7 @@ function showItineraries(){
 	var itiPrototype = document.getElementById('itineraryPrototype');
 	var itiWindow = document.getElementById('itineraryWindow');
 	console.log("num of nodes is "+itiWindow.childNodes.length);
-	while (itiWindow.childNodes.length>6) {
+	while (itiWindow.childNodes.length>7) {
     itiWindow.removeChild(itiWindow.lastChild);
     }
 	for(var i =0; i<itiernaryList.length;i++){
@@ -209,6 +244,16 @@ function showItineraries(){
 	showEvents();
 }
 
+function showProfileWindow(){
+	var proWindow = document.getElementById('profileWindow');
+	if(proWindow.style.display=="none"){
+		proWindow.style.display="block";
+	}
+	else{
+		proWindow.style.display="none";
+	}
+}
+
 function init(){
 	var selectItinerary= document.getElementById('selectIti');
 	var addItiButton = document.getElementById('addItiButton');
@@ -219,6 +264,7 @@ function init(){
 	var seatchItems = document.getElementsByClassName('searchItem');
 	var addEventConfirm = document.getElementById('addToIti');
 	var linkGroupButton = document.getElementById('addGroupConfirm');
+	var showProfileButton = document.getElementById('showProfile');
 	
 	//temp
 	var openGroupButton = document.getElementById('profilePic');
@@ -235,9 +281,9 @@ function init(){
 		seatchItems[i].addEventListener('click', jumpToDetails);
 	}
 	//temp
-	addEventConfirm.addEventListener('click', addEventToItineraryOne);
-	openGroupButton.addEventListener('click', jumpToGroupPage);
+	addEventConfirm.addEventListener('click', addEventToItinerary);
 	//---
+	showProfileButton.addEventListener('click', showProfileWindow);
 	linkGroupButton.addEventListener('click', linkGroup);
 	searchButton.addEventListener('click', jumpToSearch);
     addItiConfirm.addEventListener('click', addItinerary);

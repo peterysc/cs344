@@ -18,6 +18,7 @@ body{
 	top:0px;
 	height:120px;
 	width:1000px;
+	z-index:10;
 	
 }
 
@@ -28,7 +29,8 @@ body{
 	top:125px;
 	height:1200px;
 	width:1000px;
-    display:none;	
+	z-index:1;
+	
 }
 
 #homePage{
@@ -37,7 +39,8 @@ body{
 	border: solid rgb(200,200,200) 1px;
 	top:125px;
 	height:1200px;
-	width:1000px;	
+	width:1000px;
+    z-index:2;	
 }
 
 #searchResultPage{
@@ -48,6 +51,7 @@ body{
 	height:1200px;
 	width:1000px;
 	display:none;
+	z-index:2;	
 }
 
 #itineraryPage{
@@ -57,7 +61,6 @@ body{
 	height:1200px;
 	width:1000px;
 	display:none;
-	z-index:2;
 }
 
 
@@ -246,8 +249,8 @@ background-color:rgb(75,0,0);
 	width:300px;
 	height:1200px;
 	right:0px;
-	top:0px;
-	z-index:3;
+	top:120px;
+	z-index:9;
 	display:none;
 }
 
@@ -272,7 +275,7 @@ background-color:rgb(75,0,0);
 
 .itineraryItem{
 	position:absolute;
-	background-color:rgb(255,255,255);
+	background-color:rgb(255,0,0);
 	width:300px;
 	height:1000px;
 	right:0px;
@@ -281,6 +284,8 @@ background-color:rgb(75,0,0);
 	display:none;
 	border-radius:10px;
 	border: solid rgb(0,0,0) 2px;
+	
+
 }
 .itiName{
 	position:absolute;
@@ -298,6 +303,7 @@ background-color:rgb(75,0,0);
 	text-align: center;
 	vertical-align: middle;
 	line-height: 50px;
+	
 }
 
 .itiIcons{
@@ -307,18 +313,23 @@ background-color:rgb(75,0,0);
 	height:100px;
 	right:0px;
 	top:0px;
-	
+	border-radius:10px;
 	color:rgb(255,255,255);
 	font-family:"Times New Roman";
+	padding-top:10px;
+
 }
 
 .itiItems{
 	position:absolute;
 	width:300px;
-	height:auto;
+	height:890px;
 	right:0px;
 	top:110px;
 	border-top: solid rgb(0,0,0) 2px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	background-color:rgb(255,255,255);
 }
 
 .plusButton{
@@ -390,6 +401,10 @@ background-color:rgb(75,0,0);
 	border: solid rgb(0,0,0) 2px;
     display:none;
 	font-size:30px;
+	font-family:"Times New Roman";
+	text-align: center;
+	vertical-align: middle;
+	line-height: 50px;
 }
 
 .linkGroup{
@@ -475,7 +490,8 @@ background-color:rgb(75,0,0);
 	top:125px;
 	height:1200px;
 	width:1000px;
-    display:none;	
+    display:none;
+    z-index:2;		
 }
 
 #yelpLogo{
@@ -484,4 +500,91 @@ background-color:rgb(75,0,0);
 	height:80px;
 	width:160px;	
 	
+}
+
+.clickable:hover{
+text-decoration: underline;
+}
+
+#userInfo{
+	top:20px;
+	left:20px;
+	position:absolute;
+	height:200px;
+	width:700px;
+	border: solid rgb(200,200,200) 1px;
+	background-color:rgb(255,255,255);
+}
+
+#userNavigation{
+	top:230px;
+	left:20px;
+	position:absolute;
+	height:600px;
+	width:150px;
+	border: solid rgb(200,200,200) 1px;
+	background-color:rgb(200,200,200);
+}
+
+#groupManagement{
+	top:230px;
+	left:200px;
+	position:absolute;
+	height:600px;
+	width:520px;
+	border: solid rgb(200,200,200) 1px;
+	background-color:rgb(100,100,100);
+	
+}
+
+.addToExisting{
+	position:absolute;
+	background-color:#FFFFFF;
+	width:200px;
+	height:65px;
+	right:100px;
+	bottom:200px;
+	border-radius: 10px;
+	border: solid rgb(0,0,0) 2px;
+    color:rgb(0,0,0);
+	font-size:18px;
+	font-family:"Times New Roman";
+	text-align: middle;
+	vertical-align: middle;
+	line-height: 40px;
+	cursor: pointer;
+
+}
+
+.addToExisting:hover{
+	background-color:rgb(175,175,175);
+}
+
+.createNewItinerary{
+	position:absolute;
+	background-color:#FFFFFF;
+	width:200px;
+	height:45px;
+	right:100px;
+	bottom:100px;
+	border-radius: 10px;
+	border: solid rgb(0,0,0) 2px;
+    
+	color:rgb(0,0,0);
+	font-size:18px;
+	font-family:"Times New Roman";
+	text-align: middle;
+	vertical-align: middle;
+	line-height: 40px;
+	cursor: pointer;
+
+}
+
+.createNewItinerary:hover{
+	background-color:rgb(175,175,175);
+}
+select{
+	font-size:15px;
+	font-family:"Times New Roman";
+	color:rgb(0,0,200);
 }

@@ -29,6 +29,65 @@
 				<div id="selectIti">Itinerary Show</div>
 				
 				<div id="profilePic">
+				<img style="position:absolute;height:70px;width:80px;top:0px;left:0px;" src="profile.jpg">
+				<div id="showProfile" style="position:absolute;height:70px;width:20px;right:0px;background-color:rgb(255,0,0);"><img style="position:absolute;width:15px;top:27.5px;left:2.5px;" src="button_down.png"></div>
+				</div>
+				
+				<div id="profileWindow" style="position:absolute;top:90px;right:25px;width:150px;height:150px;border: solid rgb(200,200,200) 1px;border-radius:1px;background-color:rgb(255,255,255);z-index:10;display:none;">
+				<span class="clickable" onClick="jumpToGroupPage()" style="color:rgb(0,0,200); cursor:pointer;">About Me</span>
+				<br>
+				<span class="clickable" onClick="jumpToGroupPage()" style="color:rgb(0,0,200); cursor:pointer;">My Groups</span>
+				<br>
+				<span class="clickable"  style="color:rgb(0,0,200); cursor:pointer;">My Settings</span>
+				</div>
+				
+				<div id="itineraryWindow">
+					<div id="createItiWindow">
+					Create a new itinerary
+					    <div style="top:100px;left:100px;">Enter Name:<br>
+						<input id="inputItiName" type="text" placeholder="Itinerary Name">
+						</div>
+						<div class="confirmButton" id="addItiConfirm">Confirm</div>
+						<div class="cancelButton">Cancel</div>
+					</div>
+					
+					<div id="linkGroupWindow">
+					choose a group:
+						<select id="selectGroup">
+						<option>Select a group...</option>
+						<option>My cat friends</option>
+						<option>My dog friends</option>
+						<option>My fish friends</option>
+						<option>My bird friends</option>
+						</select>
+						<div class="confirmButton" id="addGroupConfirm">Confirm</div>
+						<div class="cancelButton">Cancel</div>
+					</div>
+					
+					<div class="itineraryItem" id="itineraryPrototype">
+					   <div class="itiName">
+					   Itinerary Name
+					   </div>
+					   <div class="itiIcons">
+					    <div class="filterIcon" id="filRes">1</div>					
+						<div class="filterIcon" id="filAct">2</div>
+						<div class="filterIcon" id="filMem">3</div>
+						<div class="filterIcon" id="filExtra">4</div>
+					    <div class="plusButton" ><img src="add.png" style="height:20px;width:20px;"></div>
+					    <span class="itiLinkInfo"></span>
+					   </div>
+					   <div class="itiItems">
+					     <div class="eventItem" id="itemPrototype">
+						 </div>
+					   Items
+					   </div>
+					   <div class="linkGroup">
+					   Link
+					   </div>
+					   <div class="viewDetail">
+					   Edit
+					   </div>
+					</div>
 				</div>
 			
 			</div>
@@ -58,56 +117,7 @@
 			<div id="mapField"><h2>Map</h2></div>
 			</div>
 			
-			<div id="mainPage">
-			    <div id="itineraryWindow">
-					<div id="createItiWindow">
-					Create a new itinerary
-					    <div style="top:100px;left:100px;">Enter Name:<br>
-						<input id="inputItiName" type="text" placeholder="Itinerary Name">
-						</div>
-						<div class="confirmButton" id="addItiConfirm">Confirm</div>
-						<div class="cancelButton">Cancel</div>
-					</div>
-					
-					<div id="linkGroupWindow">
-					choose a group:
-						<select id="selectGroup">
-						<option>Select a group...</option>
-						<option>Date Night</option>
-						<option>Robyn's B-Day</option>
-						<option>Adios Chenyang</option>
-						<option>Samson is back!</option>
-						</select>
-						<div class="confirmButton" id="addGroupConfirm">Confirm</div>
-						<div class="cancelButton">Cancel</div>
-					</div>
-					
-					<div class="itineraryItem" id="itineraryPrototype">
-					   <div class="itiName">
-					   Itinerary Name
-					   </div>
-					   <div class="itiIcons">
-					    <div class="filterIcon" id="filRes">1</div>					
-						<div class="filterIcon" id="filAct">2</div>
-						<div class="filterIcon" id="filMem">3</div>
-						<div class="filterIcon" id="filExtra">4</div>
-					    <div class="plusButton" >+</div>
-					    <span class="itiLinkInfo"></span>
-					   </div>
-					   <div class="itiItems">
-					     <div class="eventItem" id="itemPrototype">
-						 </div>
-					   Items
-					   </div>
-					   <div class="linkGroup">
-					   AddMembers
-					   </div>
-					   <div class="viewDetail">
-					   Edit
-					   </div>
-					</div>
-				</div>
-					
+			<div id="mainPage">	
 
 				<div id="infoWindow"><h3>Info</h3></div>
 				<div id="photoWindow"><h3>Photo</h3></div>
@@ -122,11 +132,25 @@
 			</div>
 			
 			<div id="memberPage">
-				
-			<h1>Member Page</h1>
+			<div id="userInfo">
+			<h1>User Info</h1>
+			</div>
+			<div id="userNavigation">
+			<h3>Navigation</h3>
+			</div>
+			<div id="groupManagement">
+			<h1>GroupManaging</h1>
+			</div>
 			</div>
 			
-			<div class="mainPopUp" id="window1">Window1
+			<div class="mainPopUp" id="window1">
+			    <div class="addToExisting">Add to Existing Itinerary
+				<select id="itiSelection">
+            		<option>Select an option...</option>
+     		   </select>
+			   </div>
+				<div class="createNewItinerary" onClick="jumpToCreateIti()">Create New Itinerary</div>
+				
 				<div class="confirmButton" id="addToIti">Confirm</div>
 				<div class="cancelButton">Cancel</div>
 				</div>
