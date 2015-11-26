@@ -1,8 +1,8 @@
 var itiernaryList=[];
 
-var friends = ['Robyn','Peter','Leon','Samson'];
+var friends = ['Robyn','Peter','Leon','Samson','Cat','Dog','Fish'];
 
-var groups = ['Date Night',"Robyn's B-Day","Adios Chenyang","Samson is back!"];
+var groups = ['My cat friends',"My dog friends","My fish friends","My bird friends"];
 /**
 Temp, events of itinerary one
 **/
@@ -40,6 +40,8 @@ function jumpToIti(){
 
 function jumpToCreateIti(){
 	openCreateWindow();
+	var selectItinerary= document.getElementById('selectIti');
+	selectItinerary.innerHTML="Itinerary Hide";
 	document.getElementById("window1").style.display="none";
 }
 
@@ -102,9 +104,11 @@ function showEvents(){
 	for(var i =0; i <currEvents.length; i++){
 		console.log("event "+i+" is "+currEvents[i]);
 		var newItem = itemPrototype.cloneNode(true);
+		var deleteButton = document.getElementById('itemDeleteButton').cloneNode(true);
 		newItem.innerHTML = currEvents[i];
 		newItem.style.display="block";
 		newItem.style.top=i*100+"px";
+		newItem.appendChild(deleteButton);
 		items.appendChild(newItem);
 	}
 }
@@ -117,6 +121,18 @@ function jumpToSearch(){
 	
 	homePage.style.display="none";
 	searchPage.style.display="block";
+	//mainPage.style.display="none";
+	groupPage.style.display="none";
+}
+
+function jumpToHomePage(){
+	var groupPage = document.getElementById('memberPage');
+	var searchPage = document.getElementById('searchResultPage');
+	var mainPage = document.getElementById('mainPage');
+	var homePage = document.getElementById('homePage');
+	
+	homePage.style.display="block";
+	searchPage.style.display="none";
 	//mainPage.style.display="none";
 	groupPage.style.display="none";
 }
@@ -177,6 +193,24 @@ function openlinkGroupWindow(){
 	openNew.style.display = "block";
 }
 
+function openItiDetailWindow(){
+	console.log("Edit clicked");
+	var itiDetail = this.parentNode.getElementsByClassName('itiDetails')[0];
+	var text = this.textContent;
+	if(text=="Edit"){
+		console.log("if reached");
+		itiDetail.style.display="block";
+		this.style.backgroundColor = "rgb(75,0,0)";
+		this.innerHTML="Hide";
+	}
+	else{
+		itiDetail.style.display="none";
+		this.style.backgroundColor = "rgb(200,0,0)";
+		this.innerHTML="Edit";
+	}
+}
+
+
 function cancelWindow(){
 	this.parentNode.style.display="none";
 }
@@ -233,16 +267,21 @@ function showItineraries(){
 		newiti.style.display="block";
 		var itiNameDiv=newiti.getElementsByClassName('itiName')[0];
 		var itiLinkDiv=newiti.getElementsByClassName('itiLinkInfo')[0];
-		itiLinkDiv.innerHTML = "Linked with:" + itiernaryList[i].group;
+		itiLinkDiv.innerHTML =itiernaryList[i].group;
+		itiLinkDiv.addEventListener('click',jumpToGroupPage);
 		itiNameDiv.style.left=50*(i);
 		itiNameDiv.innerHTML = itiernaryList[i].name;
 		itiNameDiv.addEventListener('click',switchIti);
 		newiti.getElementsByClassName('plusButton')[0].addEventListener('click',openCreateWindow);
 		newiti.getElementsByClassName('linkGroup')[0].addEventListener('click',openlinkGroupWindow);
+		newiti.getElementsByClassName('viewDetail')[0].addEventListener('click',openItiDetailWindow);
+		
 		itiWindow.appendChild(newiti);
 	}
 	showEvents();
 }
+
+
 
 function showProfileWindow(){
 	var proWindow = document.getElementById('profileWindow');

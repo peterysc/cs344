@@ -247,7 +247,7 @@ background-color:rgb(75,0,0);
 #itineraryWindow{
 	position:absolute;
 	width:300px;
-	height:1200px;
+	height:500px;
 	right:0px;
 	top:120px;
 	z-index:9;
@@ -277,7 +277,7 @@ background-color:rgb(75,0,0);
 	position:absolute;
 	background-color:rgb(255,0,0);
 	width:300px;
-	height:1000px;
+	height:490px;
 	right:0px;
 	top:50px;
 	z-index:4;
@@ -323,7 +323,7 @@ background-color:rgb(75,0,0);
 .itiItems{
 	position:absolute;
 	width:300px;
-	height:890px;
+	height:379px;
 	right:0px;
 	top:110px;
 	border-top: solid rgb(0,0,0) 2px;
@@ -446,9 +446,24 @@ background-color:rgb(75,0,0);
 	line-height: 30px;
 }
 
+.deleteButton{
+	position:absolute;
+	background-color:rgb(200,0,0);
+	width:100px;
+	height:30px;
+	border: solid rgb(0,0,0) 2px;
+	cursor:pointer;
+	
+	color:rgb(255,255,255);
+	font-family:"Times New Roman";
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30px;
+}
 .viewDetail:hover{
 	background-color:rgb(75,0,0);
 }
+
 	
 #profilePic{
 	position:absolute;
@@ -457,8 +472,6 @@ background-color:rgb(75,0,0);
 	width:100px;
 	right:20px;
 	top:10px;
-	border: solid rgb(0,0,0) 2px;
-	cursor:pointer;
 }
 
 #linkGroupWindow{
@@ -560,6 +573,7 @@ text-decoration: underline;
 	background-color:rgb(175,175,175);
 }
 
+
 .createNewItinerary{
 	position:absolute;
 	background-color:#FFFFFF;
@@ -583,8 +597,126 @@ text-decoration: underline;
 .createNewItinerary:hover{
 	background-color:rgb(175,175,175);
 }
+
+.itiDetails{
+	position:absolute;
+	background-color:#FFFFFF;
+	width:700px;
+	height:900px;
+	right:300px;
+	top:100px;
+	border-radius: 10px;
+	border: solid rgb(0,0,0) 2px;
+	display:none;
+}
+
 select{
 	font-size:15px;
 	font-family:"Times New Roman";
 	color:rgb(0,0,200);
+}
+
+.hoverDescription{
+	font-size:10px;
+	font-family:"Times New Roman";
+	background-color:rgb(255,255,255);
+	border: solid rgb(100,100,100) 1px;
+	z-index:15;
+	width:auto;
+	height:auto;
+	display:none;
+
+	
+}
+
+#search:hover + #searchD{
+	display:block;
+}
+
+#showProfile{
+	position:absolute;
+	height:69px;
+	width:20px;
+	right:0px;
+	background-color:rgb(255,0,0);
+	cursor:pointer; 
+	border: solid rgb(0,0,0) 1px;
+}
+
+#showProfile:hover{
+	background-color:rgb(200,0,0);
+}
+
+#showProfile:hover + #profileD{
+	display:block;
+}
+
+#filRes:hover + #filResD{
+	display:block;
+}
+
+#filAct:hover + #filActD{
+	display:block;
+}
+
+#filMem:hover + #filMemD{
+	display:block;
+}
+
+.plusButton:hover + #createItiD{
+	display:block;
+}
+
+.linkGroup:hover + #linkGroupD{
+	display:block;
+}
+
+.viewDetail:hover + #viewDetailD{
+	display:block;
+}
+
+.searchItem:hover{
+	background-color:rgb(200,200,200);
+}
+
+.itiLinkInfo{
+	color:rgb(0,0,200);
+	text-decoration: underline;
+	cursor:pointer;
+}
+
+.itiLinkInfo:hover + #linkInfoD{
+	display:block;
+}
+
+.deleteButton:hover + #deleteButtonD{
+	display:block;
+}
+
+#itemDeleteButton:hover #itemDeleteButtonD{
+	display:none;
+}
+
+.navigationItem{
+	position:absolute;
+	background-color:rgb(255,0,0);
+	width:auto;
+	height:30px;
+	bottom:5px;
+	border-radius: 10px;
+	cursor:pointer;
+	color:rgb(255,255,255);
+	
+	
+	font-size:15px;
+	font-family:"Times New Roman";
+	text-align: middle;
+	vertical-align: middle;
+	line-height: 30px;
+	cursor: pointer;
+
+}
+
+.navigationItem:hover {
+	background-color:rgb(200,0,0);
 }

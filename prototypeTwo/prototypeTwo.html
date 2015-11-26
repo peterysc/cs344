@@ -2,6 +2,7 @@
 	<head>
 	    <title>Yelp prototype two</title>
 		<link	rel="stylesheet" type="text/css"	href="css/index.css">
+		<link rel="shortcut icon" href="favicon.ico">  
 		<script src="prototype2.js"></script>	
 	</head>
 	<body onLoad="init()">
@@ -24,13 +25,25 @@
 				 </span>
 				 
 				 <button id="search"><img src="search.png"></button>
+				 
+				 <div id="searchD" class="hoverDescription" style="position:absolute;top:35px;right:230px;">Search
+				 </div>
+
 				</div>
+				
+				 <div class="navigationItem" style="left:200px;" onclick="jumpToHomePage()">Home Page</div>
+				 <div class="navigationItem" style="left:285px;" onclick="jumpToGroupPage()">About Me</div>
+				 <div class="navigationItem" style="left:365px;" onclick="jumpToGroupPage()">My Group</div>
+				 <div class="navigationItem" style="left:450px;">Write a Review</div>
+				 <div class="navigationItem" style="left:565px;">Find Friends</div>
 				
 				<div id="selectIti">Itinerary Show</div>
 				
 				<div id="profilePic">
 				<img style="position:absolute;height:70px;width:80px;top:0px;left:0px;" src="profile.jpg">
-				<div id="showProfile" style="position:absolute;height:70px;width:20px;right:0px;background-color:rgb(255,0,0);"><img style="position:absolute;width:15px;top:27.5px;left:2.5px;" src="button_down.png"></div>
+				<div id="showProfile"><img style="position:absolute;width:15px;top:27.5px;left:2.5px;" src="button_down.png"></div>
+				<div id="profileD" class="hoverDescription" style="position:absolute;top:60px;right:10px;">Show profile options
+				 </div>
 				</div>
 				
 				<div id="profileWindow" style="position:absolute;top:90px;right:25px;width:150px;height:150px;border: solid rgb(200,200,200) 1px;border-radius:1px;background-color:rgb(255,255,255);z-index:10;display:none;">
@@ -52,7 +65,8 @@
 					</div>
 					
 					<div id="linkGroupWindow">
-					choose a group:
+					    <div class="addToExisting">
+					    choose a group:
 						<select id="selectGroup">
 						<option>Select a group...</option>
 						<option>My cat friends</option>
@@ -60,6 +74,8 @@
 						<option>My fish friends</option>
 						<option>My bird friends</option>
 						</select>
+						</div>
+						<div class="createNewItinerary">Create a new group</div>
 						<div class="confirmButton" id="addGroupConfirm">Confirm</div>
 						<div class="cancelButton">Cancel</div>
 					</div>
@@ -69,23 +85,39 @@
 					   Itinerary Name
 					   </div>
 					   <div class="itiIcons">
-					    <div class="filterIcon" id="filRes">1</div>					
-						<div class="filterIcon" id="filAct">2</div>
-						<div class="filterIcon" id="filMem">3</div>
-						<div class="filterIcon" id="filExtra">4</div>
-					    <div class="plusButton" ><img src="add.png" style="height:20px;width:20px;"></div>
-					    <span class="itiLinkInfo"></span>
+							<div class="filterIcon" id="filRes">R</div>
+							<div id="filResD" class="hoverDescription" style="position:absolute;bottom:5px;left:0px; color:rgb(0,0,0);">Filter restaurants</div>						
+							<div class="filterIcon" id="filAct">A</div>
+							<div id="filActD" class="hoverDescription" style="position:absolute;bottom:5px;left:30px; color:rgb(0,0,0);">Filter activities</div>
+							<div class="filterIcon" id="filMem">M</div>
+							<div id="filMemD" class="hoverDescription" style="position:absolute;bottom:5px;left:60px; color:rgb(0,0,0);">Filter members</div>
+							<div class="plusButton" ><img src="add.png" style="height:20px;width:20px;"></div>
+							<div id="createItiD" class="hoverDescription" style="position:absolute;top:35px;right:-10px; color:rgb(0,0,0);">Create a new itinerary</div>
+							Linked with: <span class="itiLinkInfo" ></span>	
+							<div id="linkInfoD" class="hoverDescription" style="position:absolute;top:30px;left:50px; color:rgb(0,0,0);">Jump to the group page to manage this group</div>
 					   </div>
 					   <div class="itiItems">
 					     <div class="eventItem" id="itemPrototype">
+						 <div id="itemDeleteButton" style="position:absolute; top:5px;right:5px; cursor:pointer;">
+							 <img src="delete.png" style="width:25px;height:25px;">
+							 <div id="itemDeleteButtonD" class="hoverDescription" style="position:absolute;bottom:-5px;left:-5px; color:rgb(0,0,0);height:15px;">Delete</div>
 						 </div>
+					     </div>
 					   Items
 					   </div>
 					   <div class="linkGroup">
 					   Link
 					   </div>
-					   <div class="viewDetail">
-					   Edit
+					   <div id="linkGroupD" class="hoverDescription" style="position:absolute;bottom:0px;right:0px; color:rgb(0,0,0);">Link this itinerary with a group</div>
+					   <div class="viewDetail">Edit</div>
+					   <div id="viewDetailD" class="hoverDescription" style="position:absolute;bottom:0px;left:0px; color:rgb(0,0,0);">Edit this itinerary</div>
+					   
+					   <div class="itiDetails"><h1>Deatils of itinerary</h1>
+					   <div style="position:absolute;width:300px; height:700px; bottom:100px;left:20px; background-color:rgb(200,200,200);border: solid rgb(200,200,200) 1px;">Editing Events</div>
+					   <div style="position:absolute;width:300px; height:700px; bottom:100px;right:20px; background-color:rgb(200,200,200);border: solid rgb(200,200,200) 1px;">Editing Members</div>
+					   <div class="deleteButton" style="bottom:20px;left:20px;">Delete
+					   </div>
+					   <div id="deleteButtonD" class="hoverDescription" style="position:absolute;bottom:5px;left:25px; color:rgb(0,0,0);">Delete this itinerary</div>
 					   </div>
 					</div>
 				</div>
@@ -95,6 +127,8 @@
 			<div id="homePage">
 			<h1>HOME PAGE</h1>
 			<br>
+			<div id="instructions" style="color:rgb(255,255,255);">
+			
 			<h2>Instructions:</h2>
 			<br>
 			<h3>-Click search button to view search results</h3>
@@ -106,6 +140,7 @@
 			<h3>-Click add button to add an item into an itinerary</h3>
 			<br>
 			<h3>-Etc...</h3>
+			</div>
 			</div>
 			
 			<div id="searchResultPage">
