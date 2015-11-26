@@ -365,7 +365,7 @@ background-color:rgb(75,0,0);
 #filMem{
 	left:80px;
 }
-#filExtra{
+#InfoMem{
 	left:115px;
 }
 
@@ -602,7 +602,7 @@ text-decoration: underline;
 	position:absolute;
 	background-color:#FFFFFF;
 	width:700px;
-	height:900px;
+	height:700px;
 	right:300px;
 	top:100px;
 	border-radius: 10px;
@@ -617,7 +617,7 @@ select{
 }
 
 .hoverDescription{
-	font-size:10px;
+	font-size:15px;
 	font-family:"Times New Roman";
 	background-color:rgb(255,255,255);
 	border: solid rgb(100,100,100) 1px;
@@ -660,6 +660,10 @@ select{
 }
 
 #filMem:hover + #filMemD{
+	display:block;
+}
+
+#InfoMem:hover + #InfoMemD{
 	display:block;
 }
 

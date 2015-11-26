@@ -1,0 +1,3 @@
+-Add real data for search items
+
+-Change some descriptions: "Link"--"Group/Share" "Share this itinerary with a group"
