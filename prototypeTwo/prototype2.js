@@ -11,9 +11,10 @@ var events =[];
 
 var currentIti="";
 
+var addCurrentEevent = false;
+
 
 function jumpToIti(){
-	
 
 		var itinerary = document.getElementById("itineraryWindow");
 		var selectItinerary= document.getElementById('selectIti');
@@ -28,6 +29,7 @@ function jumpToIti(){
 		}
 		
 		console.log(itiernaryList.length);
+		
 		if(itiernaryList.length==0){
 		var createNew = document.getElementById("createItiWindow");
 		createNew.style.display = "block";
@@ -44,6 +46,7 @@ function jumpToCreateIti(){
 	var selectItinerary= document.getElementById('selectIti');
 	selectItinerary.innerHTML="Itinerary Hide";
 	document.getElementById("window1").style.display="none";
+	addCurrentEevent = true;
 }
 
 /**
@@ -71,6 +74,24 @@ function addEventToItinerary(){
 	}
     showEvents();
     this.parentNode.style.display="none";	
+}
+
+function addEventToCurrentItinerary(){
+	var selectedIti = currentIti;
+    //console.log("curIti is "+currentIti);
+
+	for(var i =0; i< itiernaryList.length;i++){
+		if(itiernaryList[i].name == selectedIti){
+			
+			var eventContent = infoWindow.innerHTML.substring(4,infoWindow.innerHTML.length-5);
+			
+			console.log("add success! "+eventContent);
+			
+			itiernaryList[i].events.push(eventContent);
+		}
+	}
+	
+    showEvents();	
 }
 //-----------------------------------------
 
@@ -286,7 +307,9 @@ function addItinerary(){
 	currentIti = newItiName.value;
 	newItiName.value ="";
 	this.parentNode.style.display="none";
+	
 	showItineraries();
+
 	
 }
 
@@ -332,7 +355,17 @@ function showItineraries(){
 		
 		itiWindow.appendChild(newiti);
 	}
+	
+	if(addCurrentEevent){
+		var itinerary = document.getElementById("itineraryWindow");
+		itinerary.style.display = "block";
+		addEventToCurrentItinerary();
+		addCurrentEevent = false;
+		//jumpToIti();
+	}
+	else{
 	showEvents();
+	}
 }
 
 
