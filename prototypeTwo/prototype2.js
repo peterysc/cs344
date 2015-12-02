@@ -11,6 +11,7 @@ var events =[];
 
 var currentIti="";
 
+
 function jumpToIti(){
 	
 
@@ -56,8 +57,12 @@ function addEventToItinerary(){
 	if(itiSelection.selectedIndex!=0){
 	for(var i =0; i< itiernaryList.length;i++){
 		if(itiernaryList[i].name == selectedIti){
-			console.log("add success!");
-			itiernaryList[i].events.push(infoWindow.innerHTML);
+			
+			var eventContent = infoWindow.innerHTML.substring(4,infoWindow.innerHTML.length-5);
+			
+			console.log("add success! "+eventContent);
+			
+			itiernaryList[i].events.push(eventContent);
 		}
 	}
 	}
@@ -99,18 +104,67 @@ function showEvents(){
 	
 	var currIti = document.getElementById(currItiId);
 	var items=currIti.getElementsByClassName('itiItems')[0];
+	console.log(items.childNodes.length);
+	while(items.childNodes.length>3){
+	items.removeChild(items.lastChild);
+	}
+	
 	var itemPrototype = document.getElementById('itemPrototype');
 	console.log("events are "+currEvents);
 	for(var i =0; i <currEvents.length; i++){
 		console.log("event "+i+" is "+currEvents[i]);
 		var newItem = itemPrototype.cloneNode(true);
 		var deleteButton = document.getElementById('itemDeleteButton').cloneNode(true);
+		deleteButton.addEventListener('click',deleteItem);
 		newItem.innerHTML = currEvents[i];
 		newItem.style.display="block";
 		newItem.style.top=i*100+"px";
 		newItem.appendChild(deleteButton);
 		items.appendChild(newItem);
 	}
+}
+
+function deleteCurrentIti(){
+	console.log("try to delete "+currentIti);
+	for(var i=0; i<itiernaryList.length; i++){
+		if(itiernaryList[i].name==currentIti){
+			itiernaryList.splice(i,1);
+		}
+	}
+	if(itiernaryList[0]!=null){
+	currentIti = itiernaryList[0].name;
+	}
+	showItineraries();
+}
+
+function deleteItem(){
+	var itemDiv = this.parentNode;
+	var itemContent = itemDiv.textContent;
+	var index=0;
+	while(itemContent[index]!=" "){
+		index++;	
+	}
+	itemContent = itemContent.substring(0,index-8);
+	console.log("'"+itemContent+"'");
+	
+	//delete the item from the itinerary
+	for(var i =0; i< itiernaryList.length;i++){
+		if(itiernaryList[i].name == currentIti){
+			var currentEvents = itiernaryList[i].events;
+			for(var j=0; j<currentEvents.length; j++){
+				console.log("'"+currentEvents[j]+"'");
+				if(currentEvents[j]==itemContent){
+					console.log("remove!");
+					currentEvents.splice(j, 1);
+				}
+			}
+			itiernaryList[i].events = currentEvents;
+		}
+	}
+	
+	this.parentNode.parentNode.removeChild(itemDiv);
+	showEvents();
+	
 }
 //-----------------------------------------
 function jumpToSearch(){
@@ -304,6 +358,7 @@ function init(){
 	var addEventConfirm = document.getElementById('addToIti');
 	var linkGroupButton = document.getElementById('addGroupConfirm');
 	var showProfileButton = document.getElementById('showProfile');
+	var itiDeleteButton = document.getElementById('itiDelete');
 	
 	//temp
 	var openGroupButton = document.getElementById('profilePic');
@@ -322,6 +377,7 @@ function init(){
 	//temp
 	addEventConfirm.addEventListener('click', addEventToItinerary);
 	//---
+	itiDeleteButton.addEventListener('click', deleteCurrentIti);
 	showProfileButton.addEventListener('click', showProfileWindow);
 	linkGroupButton.addEventListener('click', linkGroup);
 	searchButton.addEventListener('click', jumpToSearch);
