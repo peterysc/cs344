@@ -61,7 +61,7 @@ function addEventToItinerary(){
 	for(var i =0; i< itiernaryList.length;i++){
 		if(itiernaryList[i].name == selectedIti){
 			
-			var eventContent = infoWindow.innerHTML.substring(4,infoWindow.innerHTML.length-5);
+			var eventContent = infoWindow.textContent;
 			
 			console.log("add success! "+eventContent);
 			
@@ -83,7 +83,7 @@ function addEventToCurrentItinerary(){
 	for(var i =0; i< itiernaryList.length;i++){
 		if(itiernaryList[i].name == selectedIti){
 			
-			var eventContent = infoWindow.innerHTML.substring(4,infoWindow.innerHTML.length-5);
+			var eventContent = infoWindow.textContent;
 			
 			console.log("add success! "+eventContent);
 			
@@ -220,10 +220,19 @@ function jumpToDetails(){
 	
 	homePage.style.display="none";
 	searchPage.style.display="none";
-	//mainPage.style.display="block";
+	mainPage.style.display="block";
 	groupPage.style.display="none";
 	var infoWindow = document.getElementById('infoWindow');
-	infoWindow.innerHTML =  this.innerHTML;
+	var itemName = this.textContent;
+	var locationWindow = document.getElementById('locationImg');
+	var photoWindow = document.getElementById('photoImg');
+	var reviewWindow = document.getElementById('reviewImg');
+	var timeWindow = document.getElementById('timeImg');
+	locationWindow.src="sampleData\\"+itemName+"location.png";
+	photoWindow.src="sampleData\\"+itemName+"photos.png";
+	reviewWindow.src="sampleData\\"+itemName+"reviews.png";
+	timeWindow.src="sampleData\\"+itemName+"hours.png";
+	infoWindow.textContent = itemName;
 }
 
 function jumpToGroupPage(){

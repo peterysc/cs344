@@ -41,6 +41,9 @@ body{
 	height:1200px;
 	width:1000px;
     z-index:2;	
+	font-size:30px;
+	font-family:"Times New Roman";
+	text-align: center;
 }
 
 #searchResultPage{
@@ -90,42 +93,46 @@ background-color:rgb(75,0,0);
 
 #infoWindow{
 position:absolute;
-background-color:rgb(200,200,200);
-height:300px;
-width:400;
+height:50px;
+width:400px;
 top:10px;
 left:10px;
-border: solid rgb(0,0,0) 1px;
+
+}
+
+#locationWindow{
+position:absolute;
+height:250px;
+width:250px;
+top:60px;
+left:10px;
+	
 }
 
 #photoWindow{
 position:absolute;
-background-color:rgb(200,200,200);
 height:300px;
 width:570px;
 right:10px;
 top:10px;
-border: solid rgb(0,0,0) 1px;
 }
 
 #reviewWindow{
 position:absolute;
-background-color:rgb(200,200,200);
 height:770px;
-width:600px;
+width:650px;
 left:10px;
 bottom:10px;
-border: solid rgb(0,0,0) 1px;
+border-top: solid rgb(200,200,200) 1px;
 }
 
 #timeWindow{
 position:absolute;
-background-color:rgb(200,200,200);
 height:770px;
-width:370px;
+width:320px;
 right:10px;
 bottom:10px;
-border: solid rgb(0,0,0) 1px;
+border: solid rgb(200,200,200) 1px;
 }
 
 #addItiButton{
@@ -372,7 +379,7 @@ background-color:rgb(75,0,0);
 .searchItem{
 	position:relative;
 	background-color:rgb(255,255,255);
-	width:400px;
+	width:500px;
 	height:150px;
 	top:200px;
 	left:20px;
